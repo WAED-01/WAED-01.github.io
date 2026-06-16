@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Waed Hazem Ahmad — Software Engineer · AI/ML</title>
+<meta name="description" content="Portfolio of Waed Hazem Ahmad — Software Engineer specializing in AI, Machine Learning, Data Analytics, 3D and Full-Stack Development.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Outfit:wght@300;400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+</head>
+<body>
+
+<!-- ===== BOOT / LOADING ===== -->
+<div id="boot-screen" aria-hidden="true">
+  <div class="boot-inner">
+    <div class="boot-logo">WAED<span>.exe</span></div>
+    <div class="boot-bar"><div class="boot-fill" id="boot-fill"></div></div>
+    <div class="boot-status" id="boot-status">LOADING WORLD… 0%</div>
+    <button class="boot-start hidden" id="boot-start">▶ PRESS START</button>
+  </div>
+  <div class="boot-scanlines"></div>
+</div>
+
+<!-- ===== XP SCROLL BAR ===== -->
+<div id="xp-bar"><div id="xp-fill"></div></div>
+<div id="level-pill"><span id="level-text">ZONE 1 / 6</span></div>
+
+<!-- progress dots -->
+<nav class="dots" id="dots" aria-label="Section navigation"></nav>
+
+<!-- ===== HUD NAV ===== -->
+<header class="hud">
+  <a class="hud-logo" href="#top">WAED<span>.exe</span></a>
+  <nav class="hud-nav" id="hud-nav">
+    <a href="#about">Profile</a>
+    <a href="#skills">Skill Tree</a>
+    <a href="#quests">Quests</a>
+    <a href="#demo">Live AI</a>
+    <a href="#log">Adventure Log</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#contact" class="hud-cta">Recruit Me</a>
+  </nav>
+  <button class="hud-burger" id="hud-burger" aria-label="Open menu"><span></span><span></span><span></span></button>
+</header>
+
+<main id="top">
+<!-- ===== HERO ===== -->
+<section class="hero" id="hero">
+  <div class="grid-floor" id="grid-floor"></div>
+  <div class="stars" id="stars"></div>
+  <div class="float-icons" id="float-icons"></div>
+  <div class="hero-glow"></div>
+
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <div class="hero-eyebrow"><span class="blink">▮</span> PLAYER ONE · ISTANBUL SERVER</div>
+      <h1 class="hero-name">
+        <span class="word" data-text="Waed">Waed</span>
+        <span class="word" data-text="Hazem">Hazem</span>
+        <em class="word" data-text="Ahmad">Ahmad</em>
+      </h1>
+      <div class="hero-class">
+        <span class="class-label">CLASS</span>
+        <span class="typed" id="typed">Software Engineer</span><span class="caret">|</span>
+      </div>
+      <p class="hero-bio">
+        I build AI models, data-driven applications and full-stack web experiences.
+        Python · SQL · TensorFlow · Keras — equipped and ready for the next quest.
+      </p>
+      <div class="hero-actions">
+        <a href="#quests" class="btn btn-primary">⚔ View Quest Log</a>
+        <a href="#contact" class="btn btn-ghost">✉ Send a Raven</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hstat"><span class="hstat-num" data-count="3">0</span><span class="hstat-label">Major Quests</span></div>
+        <div class="hstat"><span class="hstat-num" data-count="4">0</span><span class="hstat-label">Certifications</span></div>
+        <div class="hstat"><span class="hstat-num" data-count="3">0</span><span class="hstat-label">Languages</span></div>
+      </div>
+    </div>
+
+    <div class="hero-stage">
+      <div class="stage-frame">
+        <span class="corner c-tl"></span><span class="corner c-tr"></span>
+        <span class="corner c-bl"></span><span class="corner c-br"></span>
+        <div class="stage-tag">COMPANION · LV. 99</div>
+        <div class="stage-ring"></div>
+        <canvas id="chibi-canvas" aria-label="Interactive 3D character of Waed"></canvas>
+        <div class="stage-hint" id="stage-hint">drag to rotate · tap an emote</div>
+      </div>
+      <div class="emote-bar" id="emote-bar">
+        <button data-anim="Wave"  title="Wave">👋</button>
+        <button data-anim="Heart" title="Heart">💖</button>
+        <button data-anim="Agree" title="Agree">👍</button>
+        <button data-anim="Jump"  title="Jump">⭐</button>
+        <button data-anim="Hop"   title="Hop">🙌</button>
+        <button data-anim="Dance" title="Dance">🕺</button>
+        <button data-anim="Walk"  title="Walk">🚶‍♀️</button>
+        <button data-anim="Run"   title="Run">🏃‍♀️</button>
+      </div>
+    </div>
+  </div>
+
+  <a class="scroll-cue" href="#about">▼ SCROLL TO CONTINUE ▼</a>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="section" id="about">
+  <div class="section-head reveal">
+    <span class="section-eyebrow">// CHARACTER PROFILE</span>
+    <h2 class="glitch" data-text="Select Your Engineer">Select Your Engineer</h2>
+  </div>
+
+  <div class="profile-grid">
+    <div class="profile-card reveal" data-tilt>
+      <span class="corner c-tl"></span><span class="corner c-tr"></span>
+      <span class="corner c-bl"></span><span class="corner c-br"></span>
+      <div class="profile-photo">
+        <img src="assets/waed.jpg" alt="Waed Hazem Ahmad wearing a traditional embroidered thobe">
+        <div class="profile-scan"></div>
+        <div class="profile-nameplate">
+          <strong>WAED H. AHMAD</strong>
+          <span>AI / ML · FULL-STACK · 3D</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="profile-info">
+      <p class="profile-text reveal">
+        Software Engineering graduate from <strong>Istanbul Nişantaşı University</strong> with hands-on
+        experience in Artificial Intelligence, Machine Learning, Data Analytics, 3D and Full-Stack Development.
+        I've trained neural networks for healthcare prediction, shipped a complete e-commerce platform,
+        and turned messy financial data into interactive dashboards — gaining XP through real projects,
+        an industry internship, and professional certifications.
+      </p>
+
+      <div class="stat-rows reveal">
+        <div class="stat-row"><span class="stat-key">CLASS</span><span class="stat-val">Software Engineer · AI/ML Specialist</span></div>
+        <div class="stat-row"><span class="stat-key">GUILD</span><span class="stat-val">Istanbul Nişantaşı University — B.Sc. Software Engineering</span></div>
+        <div class="stat-row"><span class="stat-key">GPA</span><span class="stat-val gold">★ 3.21 / 4.00</span></div>
+        <div class="stat-row"><span class="stat-key">BASE</span><span class="stat-val">Istanbul, Türkiye</span></div>
+      </div>
+
+      <div class="lang-bars reveal">
+        <div class="lang"><span>English</span><div class="bar"><div class="bar-fill" data-w="95"></div></div></div>
+        <div class="lang"><span>Arabic</span><div class="bar"><div class="bar-fill" data-w="100"></div></div></div>
+        <div class="lang"><span>Turkish</span><div class="bar"><div class="bar-fill" data-w="85"></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SKILL TREE ===== -->
+<section class="section" id="skills">
+  <div class="section-head reveal">
+    <span class="section-eyebrow">// SKILL TREE</span>
+    <h2>Equipped Abilities</h2>
+  </div>
+  <div class="skill-grid" id="skill-grid"><!-- JS --></div>
+</section>
+
+<!-- ===== QUEST LOG ===== -->
+<section class="section" id="quests">
+  <div class="section-head reveal">
+    <span class="section-eyebrow">// QUEST LOG</span>
+    <h2>Completed Quests</h2>
+  </div>
+
+  <div class="quest-grid">
+    <article class="quest-card reveal" data-tilt>
+      <div class="quest-top"><span class="quest-type main">MAIN QUEST</span><span class="quest-stars">★★★★★</span></div>
+      <h3>Heart Disease Prediction <em>w/ Neural Networks</em></h3>
+      <p>Trained MLP and CNN models on healthcare datasets for binary classification — preprocessing,
+      feature scaling, hyperparameter tuning and architecture optimization. Evaluated with Accuracy,
+      Precision, Recall, F1 and ROC-AUC.</p>
+      <div class="quest-loot"><span class="loot gold">🏆 ~90% MLP accuracy</span><span class="loot">🧠 ~89% CNN accuracy</span></div>
+      <div class="chip-row"><span class="chip">Python</span><span class="chip">TensorFlow</span><span class="chip">Keras</span><span class="chip">Pandas</span><span class="chip">NumPy</span></div>
+    </article>
+
+    <article class="quest-card reveal" data-tilt>
+      <div class="quest-top"><span class="quest-type main">MAIN QUEST</span><span class="quest-stars">★★★★★</span></div>
+      <h3>TechNest <em>— Full-Stack E-Commerce</em></h3>
+      <p>Complete electronics retail platform built as a graduation project: admin dashboard with
+      inventory, orders, customer messaging and analytics, plus auth, cart, wishlist and checkout —
+      all on a relational MySQL schema, shipped with a team via Git.</p>
+      <div class="quest-loot"><span class="loot gold">🛒 Full admin dashboard</span><span class="loot">🔐 Secure backend</span></div>
+      <div class="chip-row"><span class="chip">PHP</span><span class="chip">MySQL</span><span class="chip">JavaScript</span><span class="chip">Bootstrap</span><span class="chip">Git</span></div>
+    </article>
+
+    <article class="quest-card reveal" data-tilt>
+      <div class="quest-top"><span class="quest-type main">MAIN QUEST</span><span class="quest-stars">★★★★★</span></div>
+      <h3>LLM Monitor <em>— Observability Dashboard</em></h3>
+      <p>Production-grade monitoring for LLM applications: tracks hallucinations, prompt-injection
+      attempts, latency and token usage, all streamed to a live Grafana dashboard. Built on a
+      microservice stack with LLM-as-judge scoring and a Langfuse → Prometheus metrics bridge.</p>
+      <div class="quest-loot"><span class="loot gold">🛡 Prompt-injection detection</span><span class="loot">⚖ LLM-as-judge scoring</span></div>
+      <div class="chip-row"><span class="chip">FastAPI</span><span class="chip">Langfuse</span><span class="chip">Prometheus</span><span class="chip">Grafana</span><span class="chip">Docker</span><span class="chip">OpenAI / Anthropic</span></div>
+    </article>
+
+    <article class="quest-card reveal" data-tilt>
+      <div class="quest-top"><span class="quest-type side">SIDE QUEST</span><span class="quest-stars">★★★★☆</span></div>
+      <h3>Financial Data <em>Extraction & Dashboard</em></h3>
+      <p>Stock analytics dashboard for Tesla & GameStop: historical data via the yFinance API, revenue
+      scraped and cleaned with BeautifulSoup, transformed in Pandas, and visualized as interactive
+      stock-vs-revenue dashboards.</p>
+      <div class="quest-loot"><span class="loot gold">📈 Interactive Plotly dashboards</span><span class="loot">🕸 Web scraping pipeline</span></div>
+      <div class="chip-row"><span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">yFinance</span><span class="chip">BeautifulSoup</span><span class="chip">Plotly</span></div>
+    </article>
+  </div>
+</section>
+
+<!-- ===== ADVENTURE LOG ===== -->
+<section class="section" id="log">
+  <div class="section-head reveal">
+    <span class="section-eyebrow">// ADVENTURE LOG</span>
+    <h2>Experience Timeline</h2>
+  </div>
+
+  <div class="tl-item reveal">
+      <div class="tl-node"></div>
+      <div class="tl-card">
+        <span class="tl-date">PRESENT · ISTANBUL</span>
+        <h3>Web Developer <em>· Freelance</em></h3>
+        <ul><li>Developed and maintained responsive websites using HTML, CSS, and JavaScript.</li>
+        <li>Collaborated with clients to understand requirements and deliver customized solutions.</li>
+        <li>Optimized website performance and ensured cross-browser compatibility.</li></ul>
+      </div>
+    </div>
+  <div class="timeline">
+    <div class="tl-line" id="tl-line"></div>
+    <div class="tl-item reveal">
+      <div class="tl-node"></div>
+      <div class="tl-card">
+        <span class="tl-date">FEB 2025 — MAY 2025 · ISTANBUL</span>
+        <h3>Data Analyst Intern <em>· Educational Synergy Eğitim Hizmetleri A.Ş.</em></h3>
+        <ul><li>Cleaned, transformed and visualized data for student performance reports.</li>
+        <li>Built analytical dashboards in Python and Excel to track key metrics.</li>
+        <li>Presented insights to supervisors to drive educational improvements.</li></ul>
+      </div>
+    </div>
+    <div class="tl-item reveal">
+      <div class="tl-node"></div>
+      <div class="tl-card">
+        <span class="tl-date">2023 — 2024 · ISTANBUL</span>
+        <h3>Assistant Manager <em>· Aseertime Company</em></h3>
+        <ul><li>Coordinated day-to-day operations between the Turkey and MENA branches.</li>
+        <li>Supported internal data systems and digital menu web development.</li>
+        <li>Leveled up leadership, organization and technical documentation.</li></ul>
+      </div>
+    </div>
+    <div class="tl-item reveal">
+      <div class="tl-node"></div>
+      <div class="tl-card">
+        <span class="tl-date">2022 — PRESENT · ISTANBUL</span>
+        <h3>English Language Teacher <em>· Bahçeşehir English School / Freelance</em></h3>
+        <ul><li>Private English lessons for students across levels.</li>
+        <li>Personalized learning plans and teaching materials.</li>
+        <li>Coaching speaking, writing and communication skills.</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="demo">
+  <div class="section-head reveal">
+    <span class="section-eyebrow">// LIVE BOSS FIGHT · REAL AI MODEL</span>
+    <h2>Heart Disease Predictor</h2>
+    <p class="demo-intro">This runs my <strong>actual trained neural network</strong> — the MLP from my
+    Artificial Neural Networks project — live. Enter the patient readings and the model returns a
+    real-time risk prediction. <span class="demo-note">Educational demo, not medical advice.</span></p>
+  </div>
+
+  <div class="demo-wrap reveal">
+    <!-- INPUT PANEL -->
+    <form class="demo-form" id="demo-form" novalidate>
+      <span class="corner c-tl"></span><span class="corner c-tr"></span>
+      <span class="corner c-bl"></span><span class="corner c-br"></span>
+
+      <div class="demo-presets">
+        <span class="preset-label">Quick load:</span>
+        <button type="button" class="preset" data-preset="healthy">🟢 Low-risk example</button>
+        <button type="button" class="preset" data-preset="risky">🔴 High-risk example</button>
+      </div>
+
+      <div class="demo-grid">
+        <label>Age <span class="u" id="u-age">54</span>
+          <input type="range" name="age" min="18" max="100" value="54" step="1">
+        </label>
+        <label>Sex
+          <select name="sex"><option value="1">Male</option><option value="0">Female</option></select>
+        </label>
+        <label>Chest pain type
+          <select name="chest_pain_type">
+            <option value="1">1 — Typical angina</option>
+            <option value="2">2 — Atypical angina</option>
+            <option value="3">3 — Non-anginal</option>
+            <option value="4" selected>4 — Asymptomatic</option>
+          </select>
+        </label>
+        <label>Resting blood pressure <span class="u" id="u-bp">130</span>
+          <input type="range" name="resting_bp_s" min="80" max="220" value="130" step="1">
+        </label>
+        <label>Cholesterol (mg/dl) <span class="u" id="u-chol">246</span>
+          <input type="range" name="cholesterol" min="0" max="700" value="246" step="1">
+        </label>
+        <label>Max heart rate <span class="u" id="u-hr">150</span>
+          <input type="range" name="max_heart_rate" min="60" max="220" value="150" step="1">
+        </label>
+        <label>Oldpeak (ST depression) <span class="u" id="u-op">1.0</span>
+          <input type="range" name="oldpeak" min="-3" max="7" value="1" step="0.1">
+        </label>
+        <label>ST slope
+          <select name="st_slope">
+            <option value="0">0</option><option value="1">1</option>
+            <option value="2" selected>2</option><option value="3">3</option>
+          </select>
+        </label>
+        <label>Fasting blood sugar &gt; 120
+          <select name="fasting_blood_sugar"><option value="0">No</option><option value="1">Yes</option></select>
+        </label>
+        <label>Resting ECG
+          <select name="resting_ecg">
+            <option value="0">0 — Normal</option><option value="1">1 — ST-T abnormality</option>
+            <option value="2">2 — LV hypertrophy</option>
+          </select>
+        </label>
+        <label>Exercise-induced angina
+          <select name="exercise_angina"><option value="0">No</option><option value="1">Yes</option></select>
+        </label>
+      </div>
+
+      <button type="submit" class="btn btn-primary demo-submit" id="demo-submit">⚡ Run Prediction</button>
+    </form>
+
+    <!-- RESULT PANEL -->
+    <div class="demo-result" id="demo-result">
+      <span class="corner c-tl"></span><span class="corner c-tr"></span>
+      <span class="corner c-bl"></span><span class="corner c-br"></span>
+      <div class="gauge-wrap">
+        <svg class="gauge" viewBox="0 0 220 130">
+          <path class="gauge-track" d="M20 120 A90 90 0 0 1 200 120" fill="none"/>
+          <path class="gauge-fill" id="gauge-fill" d="M20 120 A90 90 0 0 1 200 120" fill="none"/>
+          <line class="gauge-needle" id="gauge-needle" x1="110" y1="120" x2="110" y2="40"/>
+          <circle cx="110" cy="120" r="7" class="gauge-hub"/>
+        </svg>
+        <div class="gauge-read">
+          <span class="gauge-pct" id="gauge-pct">—</span>
+          <span class="gauge-label" id="gauge-label">Awaiting input</span>
+        </div>
+      </div>
+      <div class="result-status" id="result-status">Fill in the readings and run the model to see a live prediction.</div>
+      <div class="result-meta" id="result-meta"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ACHIEVEMENTS ===== -->
+<section class="section" id="achievements">
+  <div class="section-head reveal">
+    <span class="section-eyebrow">// ACHIEVEMENTS UNLOCKED</span>
+    <h2>Certifications</h2>
+  </div>
+  <div class="ach-grid">
+    <div class="ach-card reveal"><div class="ach-icon">🏅</div><div><h3>IBM AI Developer</h3><p>Professional Certificate</p></div></div>
+    <div class="ach-card reveal"><div class="ach-icon">🏅</div><div><h3>IBM Data Science</h3><p>Professional Certificate</p></div></div>
+    <div class="ach-card reveal"><div class="ach-icon">🤖</div><div><h3>IBM watsonx Assistant</h3><p>Building an AI Assistant — Workshop</p></div></div>
+    <div class="ach-card reveal"><div class="ach-icon">⚡</div><div><h3>Future AI Summit '25</h3><p>Participant</p></div></div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="section" id="contact">
+  <div class="contact-card reveal">
+    <span class="corner c-tl"></span><span class="corner c-tr"></span>
+    <span class="corner c-bl"></span><span class="corner c-br"></span>
+    <span class="section-eyebrow">// NEW PARTY REQUEST</span>
+    <h2>Want me on your team?</h2>
+    <p>I'm open to roles in AI/ML engineering, data analytics, 3D and full-stack development.
+    Send a message and let's start the next quest together.</p>
+    <div class="contact-actions">
+      <a class="btn btn-primary" href="mailto:engwaedahmad@gmail.com">✉ engwaedahmad@gmail.com</a>
+      <a class="btn btn-ghost" href="tel:+905528583789">📞 +90 552 858 37 89</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com" target="_blank" rel="noopener">🔗 LinkedIn</a>
+    </div>
+    <div class="contact-loc">📍 Istanbul, Türkiye</div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <span>© <span id="year"></span> Waed Hazem Ahmad</span>
+  <span class="footer-pixel">GAME SAVED ✔</span>
+</footer>
+
+<div id="toast" class="toast" role="status" aria-live="polite">
+  <div class="toast-icon">🏆</div>
+  <div><strong id="toast-title">Achievement unlocked</strong><span id="toast-text"></span></div>
+</div>
+
+<script type="module" src="main.js"></script>
+</body>
+</html>
